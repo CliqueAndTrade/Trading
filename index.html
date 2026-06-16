@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClickN-Trade - Bot Trading IA | Automatisez vos trades 24/7</title>
+    <meta name="description" content="Bot de trading automatisé basé sur l'IA pour maximiser vos gains sur Binance. Stratégies intelligentes 24/7 sans interruption.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="logo.png" alt="ClickN-Trade Logo" class="logo">
+                <span class="brand-text">ClickN-Trade</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#features">Fonctionnalités</a></li>
+                <li><a href="#pricing">Tarifs</a></li>
+                <li><a href="#security">Sécurité</a></li>
+                <li><a href="#contact" class="btn-primary">Démarrer</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <div class="radar-animation"></div>
+        </div>
+        <div class="container hero-content">
+            <h1 class="hero-title">Automatisez vos Trades <span class="highlight">24h/7j</span></h1>
+            <p class="hero-subtitle">Plateforme de trading automatisé basée sur l'IA pour maximiser vos gains sur Binance</p>
+            <p class="hero-description">Travaillez pendant que votre bot gagne de l'argent ! Intelligence artificielle prédictive + Gestion des risques professionnelle</p>
+            <a href="#pricing" class="btn-hero">Voir les Plans</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2>Pourquoi Notre Bot Trading ?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>Intelligence Artificielle</h3>
+                    <p>Moteur ML avec 48 indicateurs techniques avancés. Prédictions de prix sur plusieurs mois, analyse en temps réel, décisions instantanées.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚙️</div>
+                    <h3>Automatisation Complète</h3>
+                    <p>Analyse marché 24/7 • Ouverture/fermeture position automatique • Gestion risque intelligent avec Stop Loss & Take Profit</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💼</div>
+                    <h3>Gestion des Risques</h3>
+                    <p>Limite pertes consécutives • Limite perte quotidienne • Position sizing dynamique basé sur le risque</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔐</div>
+                    <h3>Sécurité Maximale</h3>
+                    <p>Clés API jamais stockées • Configuration chiffrée localement • Bot ne peut que trader, pas retirer • Kill switch d'urgence</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Exécution Ultra-Rapide</h3>
+                    <p>Connexion sécurisée Binance avec temps de réponse inférieur à 50ms. Vos fonds toujours sous votre contrôle.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Monitoring 24/7</h3>
+                    <p>Notifications Discord instantanées • Dashboard détaillé avec P&L, win rate, trades • Historique complet de tous les trades</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💱</div>
+                    <h3>Multi-Paires Trading</h3>
+                    <p>Trade simultanément toutes les paires disponibles sur Binance (BTC, ETH, SOL, XRP...) • Positions multiples en parallèle</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <h3>Modèles ML Avancés</h3>
+                    <p>Random Forest • XGBoost • LightGBM • Modèles plus puissants en développement • Adaptation automatique à la volatilité</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cas d'Usage Section -->
+    <section class="use-cases">
+        <div class="container">
+            <h2>Pour Qui ?</h2>
+            <div class="cases-grid">
+                <div class="case-card">
+                    <h3>Débutant</h3>
+                    <p>Apprendre le trading sans risque. Comprenez les stratégies en observant le bot en action.</p>
+                </div>
+                <div class="case-card">
+                    <h3>Trader Actif</h3>
+                    <p>Automatiser votre stratégie existante. Laissez l'IA exécuter vos plans 24/7 sans fatigue.</p>
+                </div>
+                <div class="case-card">
+                    <h3>Investisseur</h3>
+                    <p>Générer un revenu passif 24/7. Vos gains travaillent pour vous pendant que vous dormez.</p>
+                </div>
+                <div class="case-card">
+                    <h3>Agence</h3>
+                    <p>Vendre le service trading à vos clients. Diversifier votre offre de services.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2>Plans d'Abonnement</h2>
+            <p class="pricing-subtitle">Choisissez le plan qui vous convient</p>
+            
+            <div class="pricing-tabs">
+                <button class="tab-btn active" onclick="showPricing('monthly')">Mensuel</button>
+                <button class="tab-btn" onclick="showPricing('annual')">Annuel <span class="badge">-2 mois gratuits</span></button>
+            </div>
+
+            <div id="monthly" class="pricing-grid active">
+                <div class="price-card">
+                    <h3>STARTER</h3>
+                    <div class="price">14.99€<span>/mois</span></div>
+                    <ul class="features-list">
+                        <li>✅ 5 paires simultanées</li>
+                        <li>✅ Capital min: $0</li>
+                        <li>✅ Notifications Discord</li>
+                        <li>✅ Mises à jour mensuelles</li>
+                        <li>✅ Support 24/7</li>
+                        <li>✅ VM/VPS dédié</li>
+                    </ul>
+                    <button class="btn-subscribe" onclick="goToPayment('starter', 'monthly')">Commencer</button>
+                </div>
+
+                <div class="price-card featured">
+                    <div class="badge-featured">Populaire</div>
+                    <h3>PRO</h3>
+                    <div class="price">29.99€<span>/mois</span></div>
+                    <ul class="features-list">
+                        <li>✅ 15 paires simultanées</li>
+                        <li>✅ Capital min: $0</li>
+                        <li>✅ Notifications Discord</li>
+                        <li>✅ Mises à jour mensuelles</li>
+                        <li>✅ Support prioritaire</li>
+                        <li>✅ VM/VPS dédié</li>
+                        <li>✅ 1 Proxy statique/mois</li>
+                    </ul>
+                    <button class="btn-subscribe featured" onclick="goToPayment('pro', 'monthly')">Commencer</button>
+                </div>
+
+                <div class="price-card">
+                    <h3>ELITE</h3>
+                    <div class="price">69.99€<span>/mois</span></div>
+                    <ul class="features-list">
+                        <li>✅ 40 paires simultanées</li>
+                        <li>✅ Capital min: $0</li>
+                        <li>✅ Notifications Discord+Mail</li>
+                        <li>✅ Mises à jour mensuelles</li>
+                        <li>✅ Optimisation ML personnalisée</li>
+                        <li>✅ Support 24/7 + consultation</li>
+                        <li>✅ VM/VPS dédié</li>
+                        <li>✅ 1 Proxy statique/mois</li>
+                    </ul>
+                    <button class="btn-subscribe" onclick="goToPayment('elite', 'monthly')">Commencer</button>
+                </div>
+            </div>
+
+            <div id="annual" class="pricing-grid">
+                <div class="price-card">
+                    <h3>STARTER</h3>
+                    <div class="price">149€<span>/an</span></div>
+                    <p class="savings">Économisez 31€</p>
+                    <ul class="features-list">
+                        <li>✅ 5 paires simultanées</li>
+                        <li>✅ Capital min: $0</li>
+                        <li>✅ Notifications Discord</li>
+                        <li>✅ Mises à jour mensuelles</li>
+                        <li>✅ Support 24/7</li>
+                        <li>✅ VM/VPS dédié</li>
+                    </ul>
+                    <button class="btn-subscribe" onclick="goToPayment('starter', 'annual')">Commencer</button>
+                </div>
+
+                <div class="price-card featured">
+                    <div class="badge-featured">Populaire</div>
+                    <h3>PRO</h3>
+                    <div class="price">299€<span>/an</span></div>
+                    <p class="savings">Économisez 61€</p>
+                    <ul class="features-list">
+                        <li>✅ 15 paires simultanées</li>
+                        <li>✅ Capital min: $0</li>
+                        <li>✅ Notifications Discord</li>
+                        <li>✅ Mises à jour mensuelles</li>
+                        <li>✅ Support prioritaire</li>
+                        <li>✅ VM/VPS dédié</li>
+                        <li>✅ 1 Proxy statique/mois</li>
+                    </ul>
+                    <button class="btn-subscribe featured" onclick="goToPayment('pro', 'annual')">Commencer</button>
+                </div>
+
+                <div class="price-card">
+                    <h3>ELITE</h3>
+                    <div class="price">649€<span>/an</span></div>
+                    <p class="savings">Économisez 191€</p>
+                    <ul class="features-list">
+                        <li>✅ 40 paires simultanées</li>
+                        <li>✅ Capital min: $0</li>
+                        <li>✅ Notifications Discord+Mail</li>
+                        <li>✅ Mises à jour mensuelles</li>
+                        <li>✅ Optimisation ML personnalisée</li>
+                        <li>✅ Support 24/7 + consultation</li>
+                        <li>✅ VM/VPS dédié</li>
+                        <li>✅ 1 Proxy statique/mois</li>
+                    </ul>
+                    <button class="btn-subscribe" onclick="goToPayment('elite', 'annual')">Commencer</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security Section -->
+    <section id="security" class="security">
+        <div class="container">
+            <h2>Sécurité & Confiance</h2>
+            <p class="security-subtitle">Vos fonds sont en sécurité</p>
+            <div class="security-grid">
+                <div class="security-item">
+                    <div class="security-icon">🔐</div>
+                    <h3>Clés API Sécurisées</h3>
+                    <p>Vos clés API Binance ne sont jamais stockées sur nos serveurs. Chiffrement local maximum.</p>
+                </div>
+                <div class="security-item">
+                    <div class="security-icon">🛡️</div>
+                    <h3>Configuration Chiffrée</h3>
+                    <p>Toute votre configuration est chiffrée localement. Accès sécurisé 24/7 à vos données.</p>
+                </div>
+                <div class="security-item">
+                    <div class="security-icon">⚡</div>
+                    <h3>Limitation du Bot</h3>
+                    <p>Le bot ne peut que trader et vendre. Retrait des fonds impossible sans votre autorisation.</p>
+                </div>
+                <div class="security-item">
+                    <div class="security-icon">🚨</div>
+                    <h3>Kill Switch</h3>
+                    <p>Vous contrôlez le kill switch d'urgence. Arrêtez le bot instantanément en cas de problème.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video-section">
+        <div class="container">
+            <h2>Découvrez le Bot en Action</h2>
+            <div class="video-container">
+                <video controls poster="">
+                    <source src="clickn-radar-1.mp4" type="video/mp4">
+                    Votre navigateur ne supporte pas la lecture vidéo.
+                </video>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="cta-section">
+        <div class="container">
+            <h2>Prêt à Rejoindre l'Aventure ?</h2>
+            <p>Commencez à trader automatiquement dès aujourd'hui</p>
+            <button class="btn-cta">Créer mon Compte Gratuit</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>ClickN-Trade</h4>
+                    <p>Bot de trading automatisé basé sur l'IA pour maximiser vos gains sur Binance.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Liens Rapides</h4>
+                    <ul>
+                        <li><a href="#features">Fonctionnalités</a></li>
+                        <li><a href="#pricing">Tarifs</a></li>
+                        <li><a href="#security">Sécurité</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Support 24/7</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Discord Community</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Légal</h4>
+                    <ul>
+                        <li><a href="#">Conditions d'Utilisation</a></li>
+                        <li><a href="#">Politique de Confidentialité</a></li>
+                        <li><a href="#">Avertissement de Risque</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 ClickN-Trade. Tous droits réservés. Plateforme sécurisée et régulée.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
