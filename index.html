@@ -32,8 +32,11 @@
         <div class="container hero-content">
             <h1 class="hero-title">Automatisez vos Trades <span class="highlight">24h/7j</span></h1>
             <p class="hero-subtitle">Plateforme de trading automatisé basée sur l'IA pour maximiser vos gains sur Binance</p>
-            <p class="hero-description">Travaillez pendant que votre bot gagne de l'argent ! Intelligence artificielle prédictive + Gestion des risques professionnelle</p>
-            <a href="#pricing" class="btn-hero">Voir les Plans</a>
+            <p class="hero-description">Dormez pendant que votre bot gagne de l'argent ! Intelligence artificielle prédictive + Gestion des risques professionnelle</p>
+            <div class="hero-buttons">
+                <a href="#pricing" class="btn-hero">Voir les Plans d'abonements</a>
+                <a href="https://discord.gg/MSk3NhPuWE" class="btn-hero btn-hero-secondary">Rejoindre La Communauté Discord</a>
+            </div>
         </div>
     </section>
 
@@ -266,12 +269,124 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section id="contact" class="cta-section">
+    <!-- FAQ Section -->
+    <section class="faq-section">
         <div class="container">
-            <h2>Prêt à Rejoindre l'Aventure ?</h2>
-            <p>Commencez à trader automatiquement dès aujourd'hui</p>
-            <button class="btn-cta">Créer mon Compte Gratuit</button>
+            <h2>❓ Questions Fréquentes ❓</h2>
+            <div class="faq-grid">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>1️⃣ Est-ce légal?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p><strong>100% légal. ✅</strong></p>
+                        <p>Le bot utilise les API officielles de Binance.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>2️⃣ Besoin d'expertise?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Le bot se gère tout seul.</p>
+                        <p>Configuration en <strong>5 minutes</strong> (un membre de notre équipe peut vous aider à l'installation).</p>
+                        <p>Simple via l'interface, laissez tourner autant que vous voulez <strong>24h/24 7j/7</strong>.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>3️⃣ Combien on peut gagner?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Dépend du <strong>capital & volatilité</strong>. 📊</p>
+                        <p>Mais le bot est conçu pour <strong>minimiser les pertes</strong> et <strong>maximiser les gains</strong> grâce à un système intelligent de <strong>stop loss / take profit</strong>.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>4️⃣ Risques?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p><strong>Trading = risque.</strong> ⚠️</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>5️⃣ Support?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p><strong>Discord, email, consultation live.</strong> 💬</p>
+                        <p><strong>Réponses &lt;24h.</strong></p>
+                        <p><strong>Aide à l'installation offerte</strong> dès l'achat de tout type d'abonnement</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 6 -->
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>6️⃣ Nos Données?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p><strong>Zéro tracking.</strong> 🔐</p>
+                        <p>Le bot tourne en local dans notre infrastructure, un accès vous est fourni dès l'achat de tout type d'abonnement.</p>
+                        <p><strong>Vos fonds restent sur votre compte Binance</strong> — le bot a juste besoin de l'API pour fonctionner et exécuter les trades.</p>
+                        <p><strong>Aucun retrait n'est autorisé</strong> via ces clés, ce qui signifie qu'aucun transfert de fonds vers un autre compte ne peut être effectué — <strong>vos actifs restent sous votre contrôle.</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Discord Section -->
+    <section class="discord-section">
+        <div class="container">
+            <div class="discord-content">
+                <div class="discord-left">
+                    <h2>🎮 Rejoignez Notre Communauté Discord 🎮</h2>
+                    <p class="discord-subtitle">Tout se passe en direct ici!</p>
+                    <div class="discord-features">
+                        <div class="discord-feature">
+                            <span class="feature-icon">📊</span>
+                            <h4>Résultats en Direct</h4>
+                            <p>Tous les trades exécutés par le bot en temps réel</p>
+                        </div>
+                        <div class="discord-feature">
+                            <span class="feature-icon">🔔</span>
+                            <h4>Alertes Instantanées</h4>
+                            <p>Notifications des signaux et des opportunités de trading</p>
+                        </div>
+                        <div class="discord-feature">
+                            <span class="feature-icon">💬</span>
+                            <h4>Support 24/7</h4>
+                            <p>Posez vos questions, discutez avec la communauté</p>
+                        </div>
+                        <div class="discord-feature">
+                            <span class="feature-icon">📈</span>
+                            <h4>Statistiques Détaillées</h4>
+                            <p>P&L, win rate, analyses des trades et bien plus</p>
+                        </div>
+                    </div>
+                    <a href="https://discord.gg/MSk3NhPuWE" class="btn-discord">
+                        <span>Rejoindre Discord Maintenant</span>
+                        <span class="discord-icon">→</span>
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 
