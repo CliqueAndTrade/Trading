@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirection Paiement - ClickN-Trade</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .redirect-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        .redirect-box {
+            text-align: center;
+            background: linear-gradient(135deg, rgba(255, 0, 110, 0.1), rgba(29, 15, 46, 0.5));
+            border: 2px solid rgba(255, 0, 110, 0.3);
+            border-radius: 15px;
+            padding: 3rem;
+            backdrop-filter: blur(10px);
+            animation: scaleIn 0.6s ease-out;
+            max-width: 500px;
+        }
+
+        .redirect-box h1 {
+            animation: textGlow 2s ease-in-out infinite;
+            margin-bottom: 1rem;
+        }
+
+        .redirect-box p {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(255, 0, 110, 0.3);
+            border-top-color: var(--primary-color);
+            border-radius: 50%;
+            animation: rotate360 1s linear infinite;
+            margin: 1rem 0;
+        }
+
+        .plan-info {
+            background: rgba(255, 0, 110, 0.05);
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            text-align: left;
+        }
+
+        .plan-info strong {
+            color: var(--primary-color);
+        }
+
+        .plan-info p {
+            margin: 0.5rem 0;
+        }
+
+        .error-box {
+            background: rgba(255, 68, 68, 0.1);
+            border: 1px solid #ff4444;
+            color: #ff4444;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            display: none;
+        }
+
+        .back-link {
+            margin-top: 2rem;
+        }
+
+        .back-link a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .back-link a:hover {
+            color: var(--accent-green);
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="logo.png" alt="ClickN-Trade Logo" class="logo">
+                <span class="brand-text">ClickN-Trade</span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="redirect-container">
+        <div class="redirect-box">
+            <h1>🎉 Passage à la Caisse</h1>
+            <p>Redirection vers le paiement sécurisé Stripe...</p>
+            
+            <div class="spinner"></div>
+
+            <div class="plan-info">
+                <p><strong>Plan:</strong> <span id="plan-name">PRO</span></p>
+                <p><strong>Montant:</strong> <span id="plan-price">29.99€</span></p>
+                <p><strong>Facturation:</strong> <span id="plan-billing">Mensuel</span></p>
+            </div>
+
+            <div class="error-box" id="error-box">
+                ⚠️ Les liens de paiement n'ont pas été configurés.<br>
+                Veuillez suivre le guide PAYMENT_SIMPLE.md pour configurer Stripe.
+            </div>
+
+            <div class="back-link">
+                <a href="index.html#pricing">← Retour aux tarifs</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 🔑 CONFIGUREZ VOS LIENS STRIPE PAYMENT LINKS ICI
+        // Allez sur: https://dashboard.stripe.com/payment-links
+        // Créez 6 liens de paiement (un par plan/période)
+        // Remplacez les URLs ci-dessous par vos liens Stripe
+
+        const paymentLinks = {
+            starter_monthly: 'https://buy.stripe.com/dRm4gy8fz1c5ft26Y0eIw01',
+            starter_annual: 'https://buy.stripe.com/5kQ5kCanHdYR6WwaaceIw04',
+            pro_monthly: 'https://buy.stripe.com/bJeaEW67rg6Z4Oo0zCeIw02',
+            pro_annual: 'https://buy.stripe.com/28E6oGfI1g6Zft2eqseIw05',
+            elite_monthly: 'https://buy.stripe.com/7sYfZg67r6wpa8IcikeIw03',
+            elite_annual: 'https://buy.stripe.com/00w8wO53nf2V6Ww5TWeIw06'
+        };
+
+        // Informations des plans (pour l'affichage)
+        const plans = {
+            starter: { name: 'STARTER', monthly: '14.99€', annual: '149€' },
+            pro: { name: 'PRO', monthly: '29.99€', annual: '299€' },
+            elite: { name: 'ELITE', monthly: '69.99€', annual: '649€' }
+        };
+
+        // Récupérer les paramètres
+        const urlParams = new URLSearchParams(window.location.search);
+        const plan = urlParams.get('plan') || 'pro';
+        const billing = urlParams.get('billing') || 'monthly';
+
+        // Afficher les informations du plan
+        const planInfo = plans[plan] || plans.pro;
+        document.getElementById('plan-name').textContent = planInfo.name;
+        document.getElementById('plan-price').textContent = billing === 'annual' ? planInfo.annual : planInfo.monthly;
+        document.getElementById('plan-billing').textContent = billing === 'annual' ? 'Annuel' : 'Mensuel';
+
+        // Construire la clé et récupérer le lien
+        const key = `${plan}_${billing}`;
+        const stripeLink = paymentLinks[key];
+
+        // Vérifier si le lien est configuré
+        if (stripeLink && !stripeLink.includes('REMPLACER_PAR_VOTRE_LIEN')) {
+            // Rediriger après 2 secondes
+            setTimeout(() => {
+                window.location.href = stripeLink;
+            }, 2000);
+        } else {
+            // Afficher une erreur
+            document.querySelector('.spinner').style.display = 'none';
+            document.getElementById('error-box').style.display = 'block';
+            console.error('❌ Lien Stripe non configuré pour:', key);
+        }
+
+        console.log('🔄 Redirection vers:', key);
+        console.log('💳 Stripe Link:', stripeLink);
+    </script>
+</body>
+</html>
